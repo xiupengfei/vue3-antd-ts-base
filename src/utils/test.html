@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="input" />
+  <p>
+    内容是：
+    <span id="content">
+
+    </span>
+  </p>
+</body>
+<script>
+  var oInput = document.querySelector('#input')
+  var oContent = document.querySelector('#content')
+  // oInput.value = 'aa'
+  var data = {
+    value: ''
+  }
+
+  Object.defineProperty(data, 'value', {
+    get() {
+      console.log('读取数据')
+      return oInput.value
+    },
+    set(v) {
+      console.log('设置数据')
+      oInput.value = v
+      oContent.innerText = v
+    }
+    // value: 'aa'
+  })
+  // console.log('读取', data.value)
+  // data.value = 11
+  oInput.oninput = function(e) {
+    data.value = e.target.value
+    console.log('data.value', data.value)
+  }
+</script>
+</html>

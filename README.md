@@ -1,1 +1,11 @@
-# vue3-antd-ts-base
+# Vue 3 + Typescript + Vite
+
+```bash
+# 启动
+npm start
+
+# 构建
+npm run build
+```
+
+[antd官网](https://2x.antdv.com/components/overview-cn/)
