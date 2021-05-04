@@ -2,10 +2,10 @@
 
 ```bash
 # 启动
-npm start
+  npm start
 
-# 构建
+ # 构建
 npm run build
 ```
 
-[antd官网](https://2x.antdv.com/components/overview-cn/)
+[antd 官网](https://2x.antdv.com/components/overview-cn/)

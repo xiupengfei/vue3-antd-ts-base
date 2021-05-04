@@ -3,10 +3,8 @@
  */
 
 export default {
-  state: () => ({
-
-  }),
+  state: () => ({}),
   mutations: {},
   getters: {},
-  actions: {}
+  actions: {},
 }

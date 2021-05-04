@@ -1,10 +1,12 @@
 // import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { loadEnv } from 'vite'
 import type { UserConfig, ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
 import modifyVars from './src/themes/global'
 import { svgBuilder } from './src/plugins/svgBuilder'
+import { wrapperEnv } from './build/utils'
 
 // https://vitejs.dev/config/
 // export default defineConfig({
@@ -20,13 +22,16 @@ const pathResolve = (dir: string) => {
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   console.log(command, mode)
   const root = process.cwd()
+  const env = wrapperEnv(loadEnv(mode, root))
+  const { VITE_PORT } = env
   return {
     base: './',
     root,
     server: {
-      port: 3001,
+      port: VITE_PORT,
       open: true
     },
+    define: {},
     resolve: {
       alias: {
         '@/': pathResolve('src') + '/'

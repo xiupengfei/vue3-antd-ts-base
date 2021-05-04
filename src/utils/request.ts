@@ -5,11 +5,12 @@ const UNKNOWN_ERROR = '未知错误!'
 
 // 创建 axios 实例
 const service: AxiosInstance = axios.create({
-  baseURL: process.env.NODE_ENV === 'development'
-    ? process.env.VUE_APP_BASE_API
-    : process.env.VUE_APP_SERVER_URL,
+  baseURL:
+    process.env.NODE_ENV === 'development'
+      ? process.env.VUE_APP_BASE_API
+      : process.env.VUE_APP_SERVER_URL,
   // baseURL: 'http://192.168.1.104:3000',
-  timeout: 50000
+  timeout: 50000,
   // withCredentials: true // 跨域请求时发送cookie
 })
 
@@ -25,7 +26,7 @@ service.interceptors.request.use(
   (error) => {
     NProgress.done()
     Promise.reject(error)
-  }
+  },
 )
 
 // 响应拦截器
@@ -34,7 +35,7 @@ service.interceptors.response.use(
     NProgress.done()
     return response.data
   },
-  error => {
+  (error) => {
     NProgress.done()
     // timeout of 5000ms exceeded
     const re = /^timeout of (\d+)ms exceeded$/
@@ -81,7 +82,7 @@ service.interceptors.response.use(
     }
 
     return Promise.reject(error)
-  }
+  },
 )
 
 export default service

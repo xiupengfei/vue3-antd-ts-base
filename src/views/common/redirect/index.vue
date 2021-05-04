@@ -17,10 +17,10 @@ export default defineComponent({
 
     replace({
       path: '/' + _path,
-      query
+      query,
     })
 
     return {}
-  }
+  },
 })
 </script>

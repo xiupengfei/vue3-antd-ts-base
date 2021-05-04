@@ -1,7 +1,9 @@
-
 const Storage = globalThis.localStorage
 
-enum ECollapsed { T = 'T', F = 'F' }
+enum ECollapsed {
+  T = 'T',
+  F = 'F',
+}
 
 // App
 const sidebarCollapsedKey = '--sidebar-collapsed--'

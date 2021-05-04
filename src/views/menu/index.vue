@@ -13,6 +13,6 @@ export default defineComponent({
   components: {},
   setup() {
     return {}
-  }
+  },
 })
 </script>

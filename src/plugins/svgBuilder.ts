@@ -26,24 +26,18 @@ const findSvgFile = (dir: string): string[] => {
           // console.log(dirent.name)
           let width = 0
           let height = 0
-          let content = $2.replace(
-            clearHeightWidth,
-            (s1, s2, s3) => {
-              if (s2 === 'width') {
-                width = s3
-              } else if (s2 === 'height') {
-                height = s3
-              }
-              return ''
+          let content = $2.replace(clearHeightWidth, (s1, s2, s3) => {
+            if (s2 === 'width') {
+              width = s3
+            } else if (s2 === 'height') {
+              height = s3
             }
-          )
+            return ''
+          })
           if (!hasViewBox.test($2)) {
             content += `viewBox="0 0 ${width} ${height}"`
           }
-          return `<symbol id="${idPerfix}-${dirent.name.replace(
-            '.svg',
-            ''
-          )}" ${content}>`
+          return `<symbol id="${idPerfix}-${dirent.name.replace('.svg', '')}" ${content}>`
         })
         .replace('</svg>', '</symbol>')
       svgRes.push(svg)
@@ -52,10 +46,7 @@ const findSvgFile = (dir: string): string[] => {
   return svgRes
 }
 
-export const svgBuilder = (
-  path: string,
-  perfix = 'icon'
-): Plugin => {
+export const svgBuilder = (path: string, perfix = 'icon'): Plugin => {
   idPerfix = perfix
   const res = findSvgFile(path)
   // console.log(res.length)
