@@ -14,7 +14,9 @@ Object.keys(moduleFiles).forEach((key) => {
 
 // 创建 store 容器实例.
 const store = createStore<IRootState>({
-  state: () => ({}),
+  state: () => ({
+    version: 'v0.0.1',
+  }),
   // mutations: {
   //   increment(state: IRootState) {},
   // },

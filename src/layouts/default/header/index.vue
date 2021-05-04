@@ -14,9 +14,9 @@ export default defineComponent({
   name: 'Header',
   components: {
     MenuUnfoldOutlined,
-    MenuFoldOutlined
+    MenuFoldOutlined,
   },
-  setup(_) {
+  setup() {
     // console.log(props, ctx)
     const store = useStore<{ app: IAppState }>()
     const collapsed = ref<boolean>(store.state.app.sidebar.collapsed)
@@ -29,11 +29,9 @@ export default defineComponent({
 
     return {
       collapsed,
-      handleClick
+      handleClick,
     }
-  }
+  },
 })
 </script>
-<style lang="less" scoped>
-</style>
-
+<style lang="less" scoped></style>

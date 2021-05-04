@@ -1,5 +1,5 @@
 <template>
-  <a-menu-item :key="item.name">
+  <a-menu-item>
     <router-link :to="{ name: item.name }">
       <svg-icon class="svg-icon" :name="item?.meta?.icon" />
       <span> {{ item.meta.title }}</span>
@@ -8,19 +8,19 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import type { AppRouteRecordRaw } from '@/router/types'
+import type { AppRouteRecordRaw } from '@/router/interface'
 
 export default defineComponent({
   name: 'SubMenuItem',
   props: {
     item: {
       type: Object as PropType<AppRouteRecordRaw>,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   setup() {
     return {}
-  }
+  },
 })
 </script>
 <style lang="less" scoped>
@@ -28,4 +28,3 @@ export default defineComponent({
   margin-right: 10px;
 }
 </style>
-

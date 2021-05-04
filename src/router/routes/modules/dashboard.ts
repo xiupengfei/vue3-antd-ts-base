@@ -1,4 +1,4 @@
-import type { AppRouteModule } from '@/router/types';
+import type { AppRouteModule } from '@/router/interface'
 
 import DefaultLayout from '@/layouts/default/index.vue'
 
@@ -18,7 +18,7 @@ const dashboard: AppRouteModule = {
       component: () => import('@/views/demo1/index.vue'),
       meta: {
         title: 'Demo1',
-        icon: 'dashboard'
+        icon: 'dashboard',
       },
     },
     {
@@ -27,10 +27,10 @@ const dashboard: AppRouteModule = {
       component: () => import('@/views/demo2/index.vue'),
       meta: {
         title: 'Demo2',
-        icon: 'dashboard'
+        icon: 'dashboard',
       },
     },
   ],
-};
+}
 
-export default dashboard;
+export default dashboard

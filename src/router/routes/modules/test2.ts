@@ -1,4 +1,4 @@
-import type { AppRouteModule } from '@/router/types';
+import type { AppRouteModule } from '@/router/interface'
 
 import DefaultLayout from '@/layouts/default/index.vue'
 
@@ -11,14 +11,16 @@ const test: AppRouteModule = {
     icon: 'windows',
     title: 'Test2',
   },
-  children: [{
-    path: 'menu11',
-    name: 'menu11',
-    component: () => import('@/views/menu/subs/menu1.vue'),
-    meta: {
-      title: 'menu1',
+  children: [
+    {
+      path: 'menu11',
+      name: 'menu11',
+      component: () => import('@/views/menu/subs/menu1.vue'),
+      meta: {
+        title: 'menu1',
+      },
     },
-  }]
-};
+  ],
+}
 
-export default test;
+export default test

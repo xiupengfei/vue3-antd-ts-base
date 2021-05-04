@@ -11,13 +11,14 @@ export default defineComponent({
   name: 'SvgIcon',
   props: {
     name: {
-      type: String
+      type: String,
+      default: '',
       // required: true
     },
     color: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   setup({ name }) {
     const iconName = computed(() => `#icon-${name}`)
@@ -28,11 +29,11 @@ export default defineComponent({
       return 'svg-icon'
     })
     return { iconName, svgClass }
-  }
+  },
 })
 </script>
 
-<style lang='less' scoped>
+<style lang="less" scoped>
 .svg-icon {
   width: 1em;
   height: 1em;

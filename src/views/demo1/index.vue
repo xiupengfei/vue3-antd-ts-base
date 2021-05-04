@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 import { useStore } from 'vuex'
 import { IAppState } from '@/store/modules/app'
-import styles from './style.module.scss'
+import styles from './style.module.less'
 
 export default defineComponent({
   name: 'Demo1',
@@ -19,7 +19,6 @@ export default defineComponent({
   setup() {
     const store = useStore<{ app: IAppState }>()
     // console.log(import.meta.env)
-    console.log(import.meta.env.a == 'test')
     console.log(styles)
     return {
       sidebar: store.state.app.sidebar,
