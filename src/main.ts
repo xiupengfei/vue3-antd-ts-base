@@ -1,4 +1,5 @@
 import '@/styles/var/index.less'
+import 'normalize.css'
 import { createApp } from 'vue'
 import { setupStore } from '@/store'
 import { setupRouter } from '@/router'

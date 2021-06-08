@@ -9,7 +9,7 @@ const WHITE_NAME_LIST = ['Redirect']
 // app router
 const router = createRouter({
   history: createWebHashHistory('/'),
-  routes: (constantRoutes as unknown) as RouteRecordRaw[],
+  routes: constantRoutes as unknown as RouteRecordRaw[],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

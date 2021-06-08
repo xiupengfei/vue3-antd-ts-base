@@ -16,7 +16,7 @@ import { wrapperEnv } from './build/utils'
 // const { VITE_PUBLIC_PATH } = import.meta.env
 
 const pathResolve = (dir: string) => {
-  return resolve(process.cwd(), '.', dir);
+  return resolve(process.cwd(), '.', dir)
 }
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
@@ -29,13 +29,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     root,
     server: {
       port: VITE_PORT,
-      open: true
+      open: true,
     },
     define: {},
     resolve: {
       alias: {
-        '@/': pathResolve('src') + '/'
-      }
+        '@/': pathResolve('src') + '/',
+      },
     },
     build: {
       target: 'es2015',
@@ -56,21 +56,23 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         less: {
           modifyVars,
           javascriptEnabled: true, // less
-        }
-      }
+        },
+      },
     },
     plugins: [
       vue(),
       svgBuilder('./src/icons/svg/'),
       styleImport({
-        libs: [{
-          libraryName: 'ant-design-vue',
-          esModule: true,
-          resolveStyle: (name) => {
-            return `ant-design-vue/es/${name}/style/css`;
+        libs: [
+          {
+            libraryName: 'ant-design-vue',
+            esModule: true,
+            resolveStyle: (name) => {
+              return `ant-design-vue/es/${name}/style/css`
+            },
           },
-        }]
-      })
+        ],
+      }),
     ],
   }
 }
