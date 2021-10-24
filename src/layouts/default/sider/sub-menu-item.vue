@@ -1,5 +1,13 @@
+<!--
+ * @Descripttion: 
+ * @Version: v0.1
+ * @Author: pengfei.xiu
+ * @Date: 2021-10-24 13:43:02
+ * @LastEditors: pengfei.xiu
+ * @LastEditTime: 2021-10-24 14:30:30
+-->
 <template>
-  <a-menu-item>
+  <a-menu-item :key="item.name">
     <router-link :to="{ name: item.name }">
       <svg-icon class="svg-icon" :name="item?.meta?.icon" />
       <span> {{ item.meta.title }}</span>

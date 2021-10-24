@@ -1,3 +1,2 @@
-export default interface IRootState {
-  version: string
-}
+import type { ISettings } from '@/settings'
+export default interface IRootState extends ISettings {}

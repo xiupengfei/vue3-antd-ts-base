@@ -4,7 +4,7 @@
     <a-layout>
       <HeaderComponent />
       <a-layout-content class="main-container">
-        <RouterView>
+        <router-view>
           <template #default="{ Component, route }">
             <transition name="fade" mode="out-in" appear>
               <!-- <keep-alive>
@@ -13,7 +13,7 @@
               <component :is="Component" :key="route.fullPath" />
             </transition>
           </template>
-        </RouterView>
+        </router-view>
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -46,7 +46,6 @@ export default defineComponent({
 .main-container {
   margin: 16px;
   padding: 16px;
-  background-color: #fff;
   min-height: 280px;
 }
 </style>

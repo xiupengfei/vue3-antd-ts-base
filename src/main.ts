@@ -7,7 +7,9 @@ import { setupSvgIcon } from '@/icons'
 import { setupAntd } from '@/vendor/antd'
 import App from '@/App.vue'
 // import 'ant-design-vue/dist/antd.less'
+
 import '@/styles/index.less'
+// import 'ant-design-vue/dist/antd.dark.less'
 ;(async () => {
   const app = createApp(App)
 

@@ -3,15 +3,15 @@ import { resolve } from 'path'
 import { loadEnv } from 'vite'
 import type { UserConfig, ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import styleImport from 'vite-plugin-style-import'
+import { getThemeVariables } from 'ant-design-vue/dist/theme'
+import settings from './src/settings'
 import modifyVars from './src/themes/global'
 import { svgBuilder } from './src/plugins/svgBuilder'
 import { wrapperEnv } from './build/utils'
 
 // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [vue()]
-// })
 
 // const { VITE_PUBLIC_PATH } = import.meta.env
 
@@ -54,13 +54,19 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         less: {
-          modifyVars,
+          modifyVars: {
+            ...getThemeVariables({
+              dark: !!settings.dark,
+            }),
+            ...modifyVars,
+          },
           javascriptEnabled: true, // less
         },
       },
     },
     plugins: [
       vue(),
+      vueJsx(),
       svgBuilder('./src/icons/svg/'),
       styleImport({
         libs: [

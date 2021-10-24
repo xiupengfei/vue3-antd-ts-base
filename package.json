@@ -1,11 +1,18 @@
 {
-  "name": "community-base",
+  "name": "vue3-management-system-ts",
   "version": "0.0.1",
   "author": {
     "name": "pengfei.xiu",
     "email": "15541647796@163.com"
   },
-  "description": "基于Vue3的后台管理系统Base",
+  "description": "基于Vue3 + ant-design-vue 构建的的后台管理系统",
+  "keywords": [
+    "vue",
+    "vue3",
+    "vite",
+    "typescript",
+    "ant-design-vue"
+  ],
   "scripts": {
     "dev": "vite",
     "start": "vite",
@@ -13,15 +20,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "ant-design-vue": "^2.1.6",
+    "ant-design-vue": "3.0.0-alpha.4",
     "axios": "^0.21.1",
     "is-mobile": "^3.0.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
-    "vue": "^3.0.11",
+    "vue": "^3.2.20",
     "vue-i18n": "^8.24.4",
     "vue-router": "^4.0.8",
-    "vuex": "^4.0.1",
+    "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "peerDependencies": {},
@@ -30,16 +37,21 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "@vitejs/plugin-vue": "^1.2.2",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
     "@vue/compiler-sfc": "^3.0.11",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-define-config": "^1.0.7",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.9.0",
+    "husky": "^7.0.4",
     "install": "^0.13.0",
     "less": "^4.1.1",
     "less-loader": "^8.1.0",
     "prettier": "^2.2.1",
+    "stylelint": "^14.0.0",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-order": "^5.0.0",
     "svg-sprite-loader": "^6.0.5",
     "typescript": "^4.3.2",
     "vite": "^2.3.4",

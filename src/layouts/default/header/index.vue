@@ -1,7 +1,12 @@
 <template>
-  <a-layout-header style="background: #fff; padding: 0">
-    <menu-unfold-outlined v-if="collapsed" @click="handleClick" />
-    <menu-fold-outlined v-else @click="handleClick" />
+  <a-layout-header>
+    <a-row type="flex">
+      <a-col flex="40px">
+        <menu-unfold-outlined v-if="collapsed" @click="handleClick" />
+        <menu-fold-outlined v-else @click="handleClick" />
+      </a-col>
+      <a-col flex="auto"></a-col>
+    </a-row>
   </a-layout-header>
 </template>
 <script lang="ts">

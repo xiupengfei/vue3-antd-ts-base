@@ -1,11 +1,12 @@
 <template>
-  <section id="app">
+  <section id="app" :class="[state.dark ? 'theme-dark' : 'theme-light']">
     <router-view />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useStore } from 'vuex'
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 // import { useStore } from 'vuex'
@@ -16,11 +17,11 @@ export default defineComponent({
     // HelloWorld
   },
   setup() {
-    // const store = useStore()
+    const store = useStore()
     // console.log(store.state)
     // const value = ref<string>('abc')
     return {
-      // value
+      state: store.state,
     }
   },
 })

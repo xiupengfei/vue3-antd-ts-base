@@ -3,17 +3,15 @@
     <template #title>
       <span>
         <svg-icon class="svg-icon" :name="menu?.meta?.icon" />
-        <span v-show="!sidebar.collapsed">{{ menu?.meta?.title }}</span>
+        <span v-if="!sidebar.collapsed">{{ menu?.meta?.title }}</span>
       </span>
     </template>
-    <template v-if="!sidebar.collapsed">
-      <template v-for="item in menu.children">
-        <template v-if="Array.isArray(item.children)">
-          <sub-menu :menu="item" :key="item.name" />
-        </template>
-        <template v-else>
-          <sub-menu-item :key="item.name" :item="item" />
-        </template>
+    <template v-for="item in menu.children">
+      <template v-if="Array.isArray(item.children)">
+        <sub-menu :key="item.name" :menu="item" />
+      </template>
+      <template v-else>
+        <sub-menu-item :key="item.name" :item="item" />
       </template>
     </template>
   </a-sub-menu>

@@ -49,7 +49,7 @@ export default defineComponent({
     // const parentRoutes = useParentRoutes()
     const parentRoutes = route.matched.filter((matched) => matched.name !== route.name)
     const onBreakpoint = (broken: boolean) => {
-      console.log(broken)
+      // console.log(broken)
     }
 
     // const state = reactive<any>({

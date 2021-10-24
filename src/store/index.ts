@@ -2,6 +2,7 @@ import type { App } from 'vue'
 // createStore, StoreOptions, Store, ModuleTree
 import { createStore, ModuleTree } from 'vuex'
 import IRootState from '@/store/interface'
+import settings from '@/settings'
 
 const moduleFiles = import.meta.globEager('./modules/**/*.ts')
 
@@ -15,7 +16,7 @@ Object.keys(moduleFiles).forEach((key) => {
 // 创建 store 容器实例.
 const store = createStore<IRootState>({
   state: () => ({
-    version: 'v0.0.1',
+    ...settings,
   }),
   // mutations: {
   //   increment(state: IRootState) {},
