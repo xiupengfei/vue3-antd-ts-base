@@ -38,11 +38,13 @@ export default defineComponent({
 .default-layout {
   height: 100%;
 }
+
 .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.3);
   margin: 16px;
 }
+
 .main-container {
   margin: 16px;
   padding: 16px;

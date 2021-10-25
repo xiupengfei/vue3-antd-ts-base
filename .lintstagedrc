@@ -1,0 +1,3 @@
+{
+  "src/**/*.{css,less}": ["stylelint src/**/*.{css,lcss} --fix", "git add ."]
+}

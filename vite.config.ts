@@ -42,14 +42,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       outDir: 'dist',
       terserOptions: {
         compress: {
+          // 防止Infinity被压缩成1/0，这可能会导致 Chrome 上的性能问题
           keep_infinity: true,
-          // Used to delete console in production environment
           drop_console: true,
         },
       },
-      // Turning off brotliSize display can slightly reduce packaging time
+      // 启用/禁用 brotli 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能
       brotliSize: false,
-      chunkSizeWarningLimit: 1500,
+      chunkSizeWarningLimit: 1024,
     },
     css: {
       preprocessorOptions: {

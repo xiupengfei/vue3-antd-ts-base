@@ -1,15 +1,15 @@
 var express = require('express')
 var router = express.Router()
 var Mock = require('mockjs')
+import { Request, Response } from 'express'
 
 /* 用户信息 */
-router.get('/', (req, res, next) => {
+router.get('/', (req: Request, res:Response ) => {
   //  console.log(req.params)
   //  console.log(req.body)
   //  console.log(req.query)
   const num = 40
-  // 员工工号 姓名 性别 出生年月 入职时间 邮箱 电话 员工级别 基本薪资(元) 用户组权限
-  const roles = ['admin', 'system', 'hr', 'manager', 'leader', 'default']
+  const roles = ['admin', 'member', 'default']
   var data = []
   for (let i = 0; i < num; i++) {
     data.push(Mock.mock({
@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
       'level': '@string("number", 1)',
       'salary': '@string("number", 4, 6)',
       'roles': [{
-        name: roles[Mock.mock({ 'number|0-5': 0 }).number],
+        name: roles[Mock.mock({ 'number|0-2': 0 }).number],
         action: []
       }]
     }))
@@ -36,4 +36,4 @@ router.get('/', (req, res, next) => {
   })
 })
 
-module.exports = router
+export default router
